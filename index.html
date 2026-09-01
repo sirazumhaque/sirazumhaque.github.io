@@ -6,11 +6,49 @@
   <meta name="description" content="Sirazum Munira Haque, Ph.D. Candidate in Economics at Auburn University.">
   <title>Sirazum Munira Haque | Economics</title>
   <link rel="stylesheet" href="style.css">
+
+  <!-- Homepage-specific layout adjustments -->
+  <style>
+    .hero {
+      grid-template-columns: minmax(250px, 0.72fr) minmax(0, 1.55fr);
+      gap: 58px;
+    }
+
+    .photo-card {
+      justify-self: start;
+      max-width: 310px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.4rem, 5vw, 3.65rem);
+      white-space: nowrap;
+    }
+
+    @media (max-width: 900px) {
+      .hero h1 {
+        white-space: normal;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .photo-card {
+        max-width: 240px;
+      }
+    }
+  </style>
 </head>
+
 <body>
+
 <header class="site-header">
   <nav class="nav">
     <a class="brand" href="index.html">Sirazum Munira Haque</a>
+
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="research.html">Research</a>
@@ -21,12 +59,29 @@
 </header>
 
 <main>
+
   <section class="hero">
+
+    <!-- PHOTO ON LEFT -->
+    <div class="photo-card">
+      <img src="assets/headshot.jpg" alt="Sirazum Munira Haque">
+    </div>
+
+    <!-- INFORMATION ON RIGHT -->
     <div>
-      <div class="eyebrow">Auburn University · Department of Economics</div>
+      <div class="eyebrow">
+        Auburn University · Department of Economics
+      </div>
+
       <h1>Sirazum Munira Haque</h1>
-      <p class="subtitle">Ph.D. Candidate in Economics</p>
-      <p class="fields">Economics of Crime · Labor Economics · Applied Microeconomics</p>
+
+      <p class="subtitle">
+        Ph.D. Candidate in Economics
+      </p>
+
+      <p class="fields">
+        Economics of Crime · Labor Economics · Applied Microeconomics
+      </p>
 
       <p>
         My research uses applied microeconomic methods to study how criminal justice
@@ -37,22 +92,20 @@
 
       <div class="buttons">
         <a class="button primary" href="research.html">Research</a>
-        <a class="button" href="files/CV_Sirazum_Haque.pdf" target="_blank">Curriculum Vitae</a>
+
+        <a class="button"
+           href="files/CV_Sirazum_Haque.pdf"
+           target="_blank">
+          Curriculum Vitae
+        </a>
       </div>
     </div>
 
-    <div class="photo-card">
-      <!-- Replace this block with:
-      <img src="assets/headshot.jpg" alt="Sirazum Munira Haque">
-      after adding your photo to assets/headshot.jpg
-      -->
-      <div class="photo-card">
-  <img src="assets/headshot.jpg" alt="Sirazum Munira Haque">
-</div>
   </section>
 
   <section class="section">
     <h2>About</h2>
+
     <p>
       I am a Ph.D. candidate in the Department of Economics at Auburn University.
       My research interests include the economics of crime, labor economics, and
@@ -62,29 +115,38 @@
     </p>
 
     <p class="contact">
-      Email: <a href="mailto:szh0152@auburn.edu">szh0152@auburn.edu</a>
+      Email:
+      <a href="mailto:szh0152@auburn.edu">szh0152@auburn.edu</a>
     </p>
   </section>
 
   <section class="section">
     <h2>Job Market Paper</h2>
+
     <article class="paper">
-      <div class="paper-title">Impact of Pre-Arrest Diversion Program in Criminal Justice System</div>
-      <div class="paper-meta">Job Market Paper</div>
+      <div class="paper-title">
+        Impact of Pre-Arrest Diversion Program in Criminal Justice System
+      </div>
+
+      <div class="paper-meta">
+        Job Market Paper
+      </div>
+
       <p>
         This paper studies a pre-arrest diversion program that offers eligible individuals
         an alternative to traditional criminal case processing. The project examines how
         access to diversion affects criminal justice outcomes and subsequent contact with
         the criminal justice system.
       </p>
+
       <div class="paper-links">
-        <a href="research.html">Abstract and research details →</a>
-        <!-- When your JMP PDF is ready, add:
-        · <a href="files/JMP_Haque.pdf" target="_blank">PDF</a>
-        -->
+        <a href="research.html">
+          Abstract and research details →
+        </a>
       </div>
     </article>
   </section>
+
 </main>
 
 <footer>
@@ -92,5 +154,6 @@
     Sirazum Munira Haque · Department of Economics · Auburn University
   </div>
 </footer>
+
 </body>
 </html>
