@@ -3,41 +3,163 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Sirazum Munira Haque, Ph.D. Candidate in Economics at Auburn University.">
-  <title>Sirazum Munira Haque | Economics</title>
+
+  <meta name="description"
+        content="Sirazum Munira Haque, Ph.D. Candidate in Economics at Auburn University. Research in the economics of crime, labor economics, and public economics.">
+
+  <title>Sirazum Munira Haque | Economics | Auburn University</title>
+
   <link rel="stylesheet" href="style.css">
 
-  <!-- Homepage-specific layout adjustments -->
   <style>
-    .hero {
-      grid-template-columns: minmax(250px, 0.72fr) minmax(0, 1.55fr);
-      gap: 58px;
+    .home-wrap {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 72px 24px 52px;
     }
 
-    .photo-card {
-      justify-self: start;
-      max-width: 310px;
+    .home-grid {
+      display: grid;
+      grid-template-columns: minmax(250px, 330px) minmax(0, 1fr);
+      gap: 72px;
+      align-items: start;
     }
 
-    .hero h1 {
-      font-size: clamp(2.4rem, 5vw, 3.65rem);
+    .profile-column {
+      width: 100%;
+    }
+
+    .profile-photo {
+      width: 100%;
+      display: block;
+      border-radius: 3px;
+      border: 1px solid var(--line);
+    }
+
+    .profile-contact {
+      margin-top: 18px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .profile-contact a {
+      color: var(--accent);
+    }
+
+    .intro-column {
+      padding-top: 8px;
+    }
+
+    .intro-column h1 {
+      margin: 0 0 14px;
+      font-size: clamp(2.7rem, 5.2vw, 4.6rem);
+      line-height: 1.03;
+      font-weight: 500;
       white-space: nowrap;
     }
 
-    @media (max-width: 900px) {
-      .hero h1 {
+    .position-line {
+      margin: 0 0 18px;
+      font-size: 1.3rem;
+      color: var(--muted);
+    }
+
+    .fields-line {
+      margin: 0 0 25px;
+      font-size: 1.08rem;
+      font-style: italic;
+    }
+
+    .market-line {
+      margin: 0 0 27px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 1rem;
+    }
+
+    .research-summary {
+      max-width: 790px;
+      font-size: 1.05rem;
+      line-height: 1.72;
+    }
+
+    .research-summary p {
+      margin: 0 0 17px;
+    }
+
+    .education-lines {
+      margin-top: 26px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.65;
+    }
+
+    .education-lines p {
+      margin: 2px 0;
+    }
+
+    .home-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .home-buttons .button {
+      min-width: 150px;
+      text-align: center;
+    }
+
+    .home-footer {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 24px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 980px) {
+      .home-grid {
+        grid-template-columns: minmax(220px, 285px) minmax(0, 1fr);
+        gap: 44px;
+      }
+
+      .intro-column h1 {
         white-space: normal;
       }
     }
 
     @media (max-width: 760px) {
-      .hero {
-        grid-template-columns: 1fr;
-        gap: 30px;
+      .home-wrap {
+        padding-top: 40px;
       }
 
-      .photo-card {
-        max-width: 240px;
+      .home-grid {
+        grid-template-columns: 1fr;
+        gap: 34px;
+      }
+
+      .profile-column {
+        max-width: 260px;
+      }
+
+      .intro-column {
+        padding-top: 0;
+      }
+
+      .intro-column h1 {
+        font-size: clamp(2.4rem, 11vw, 3.4rem);
+      }
+
+      .position-line {
+        font-size: 1.12rem;
+      }
+
+      .home-buttons .button {
+        min-width: 0;
       }
     }
   </style>
@@ -53,106 +175,86 @@
       <a href="index.html">Home</a>
       <a href="research.html">Research</a>
       <a href="teaching.html">Teaching</a>
-      <a href="files/CV_Sirazum_Haque.pdf" target="_blank">CV</a>
+      <a href="files/CV_Sirazum_Haque.pdf" target="_blank" rel="noopener">CV</a>
     </div>
   </nav>
 </header>
 
-<main>
+<main class="home-wrap">
 
-  <section class="hero">
+  <section class="home-grid">
 
-    <!-- PHOTO ON LEFT -->
-    <div class="photo-card">
-      <img src="assets/headshot.jpg" alt="Sirazum Munira Haque">
-    </div>
+    <aside class="profile-column">
+      <img
+        class="profile-photo"
+        src="assets/headshot.jpg"
+        alt="Sirazum Munira Haque"
+      >
 
-    <!-- INFORMATION ON RIGHT -->
-    <div>
-      <div class="eyebrow">
-        Auburn University · Department of Economics
+      <div class="profile-contact">
+        <strong>Email</strong><br>
+        <a href="mailto:szh0152@auburn.edu">szh0152@auburn.edu</a>
       </div>
+    </aside>
+
+    <section class="intro-column">
 
       <h1>Sirazum Munira Haque</h1>
 
-      <p class="subtitle">
-        Ph.D. Candidate in Economics
+      <p class="position-line">
+        Ph.D. Candidate in Economics | Auburn University
       </p>
 
-      <p class="fields">
-        Economics of Crime · Labor Economics · Applied Microeconomics
+      <p class="fields-line">
+        Economics of Crime · Labor Economics · Public Economics
       </p>
 
-      <p>
-        My research uses applied microeconomic methods to study how criminal justice
-        institutions and public policies shape individual behavior and later outcomes.
-        My job market paper studies the effects of pre-arrest diversion in the criminal
-        justice system.
+      <p class="market-line">
+        <strong>I am on the 2026–27 Economics Job Market.</strong>
       </p>
 
-      <div class="buttons">
-        <a class="button primary" href="research.html">Research</a>
+      <div class="research-summary">
+        <p>
+          My job market paper studies the effects of pre-arrest diversion,
+          examining how access to an alternative to traditional criminal case
+          processing affects subsequent criminal justice outcomes.
+        </p>
+
+        <p>
+          More broadly, my research examines how criminal justice institutions
+          and public policies shape individual behavior and economic outcomes.
+          My current projects study diversion policy, social safety-net policy
+          and crime, and labor-market regulation.
+        </p>
+      </div>
+
+      <div class="education-lines">
+        <p>M.S. in Applied Economics, Illinois State University</p>
+        <p>M.B.A. and B.B.A. in Finance, University of Dhaka</p>
+      </div>
+
+      <div class="home-buttons">
+        <!-- When your JMP PDF is ready, change research.html below to files/Haque_JMP.pdf -->
+        <a class="button primary" href="research.html">Job Market Paper</a>
 
         <a class="button"
            href="files/CV_Sirazum_Haque.pdf"
-           target="_blank">
-          Curriculum Vitae
+           target="_blank"
+           rel="noopener">
+          CV
         </a>
-      </div>
-    </div>
 
-  </section>
-
-  <section class="section">
-    <h2>About</h2>
-
-    <p>
-      I am a Ph.D. candidate in the Department of Economics at Auburn University.
-      My research interests include the economics of crime, labor economics, and
-      applied microeconomics. I am especially interested in how criminal justice
-      policies affect access to alternatives to traditional prosecution and subsequent
-      criminal justice outcomes.
-    </p>
-
-    <p class="contact">
-      Email:
-      <a href="mailto:szh0152@auburn.edu">szh0152@auburn.edu</a>
-    </p>
-  </section>
-
-  <section class="section">
-    <h2>Job Market Paper</h2>
-
-    <article class="paper">
-      <div class="paper-title">
-        Impact of Pre-Arrest Diversion Program in Criminal Justice System
+        <a class="button" href="teaching.html">Teaching</a>
       </div>
 
-      <div class="paper-meta">
-        Job Market Paper
-      </div>
+    </section>
 
-      <p>
-        This paper studies a pre-arrest diversion program that offers eligible individuals
-        an alternative to traditional criminal case processing. The project examines how
-        access to diversion affects criminal justice outcomes and subsequent contact with
-        the criminal justice system.
-      </p>
-
-      <div class="paper-links">
-        <a href="research.html">
-          Abstract and research details →
-        </a>
-      </div>
-    </article>
   </section>
 
 </main>
 
-<footer>
-  <div class="footer-inner">
-    Sirazum Munira Haque · Department of Economics · Auburn University
-  </div>
+<footer class="home-footer">
+  Sirazum Munira Haque · Department of Economics · Auburn University
 </footer>
 
 </body>
