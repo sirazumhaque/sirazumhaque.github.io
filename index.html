@@ -3,163 +3,137 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <meta name="description"
-        content="Sirazum Munira Haque, Ph.D. Candidate in Economics at Auburn University. Research in the economics of crime, labor economics, and public economics.">
-
+        content="Sirazum Munira Haque, Ph.D. Candidate in Economics at Auburn University. Research in economics of crime, labor economics, and public economics.">
   <title>Sirazum Munira Haque | Economics | Auburn University</title>
-
   <link rel="stylesheet" href="style.css">
 
   <style>
-    .home-wrap {
-      max-width: 1180px;
+    .home-shell {
+      max-width: 980px;
       margin: 0 auto;
-      padding: 72px 24px 52px;
+      padding: 72px 24px 54px;
     }
 
-    .home-grid {
+    .intro-kicker {
+      font-family: Arial, Helvetica, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: .18em;
+      font-size: .78rem;
+      color: #87a9b8;
+      margin-bottom: 18px;
+    }
+
+    .home-name {
+      margin: 0 0 10px;
+      font-size: clamp(3rem, 5vw, 4.1rem);
+      line-height: 1;
+      font-weight: 500;
+      letter-spacing: -.02em;
+    }
+
+    .home-fields {
+      margin: 0 0 38px;
+      font-size: 1.15rem;
+      color: var(--muted);
+    }
+
+    .profile-row {
       display: grid;
-      grid-template-columns: minmax(250px, 330px) minmax(0, 1fr);
-      gap: 72px;
+      grid-template-columns: 200px minmax(0, 1fr);
+      gap: 38px;
       align-items: start;
-    }
-
-    .profile-column {
-      width: 100%;
     }
 
     .profile-photo {
       width: 100%;
-      display: block;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      object-position: center 20%;
       border-radius: 3px;
       border: 1px solid var(--line);
+      display: block;
     }
 
-    .profile-contact {
-      margin-top: 18px;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 0.95rem;
-      color: var(--muted);
-      line-height: 1.6;
+    .profile-copy {
+      font-size: 1.05rem;
+      line-height: 1.75;
     }
 
-    .profile-contact a {
+    .profile-copy p {
+      margin: 0 0 18px;
+    }
+
+    .market-box {
+      margin-top: 30px;
+      padding: 18px 20px;
+      border: 1px solid #50565a;
+      border-left: 3px solid #6f94a5;
+      border-radius: 4px;
+      background: rgba(255,255,255,.015);
+    }
+
+    .market-box strong {
+      display: block;
+      margin-bottom: 7px;
+    }
+
+    .market-box a {
       color: var(--accent);
     }
 
-    .intro-column {
-      padding-top: 8px;
-    }
-
-    .intro-column h1 {
-      margin: 0 0 14px;
-      font-size: clamp(2.7rem, 5.2vw, 4.6rem);
-      line-height: 1.03;
-      font-weight: 500;
-      white-space: nowrap;
-    }
-
-    .position-line {
-      margin: 0 0 18px;
-      font-size: 1.3rem;
-      color: var(--muted);
-    }
-
-    .fields-line {
-      margin: 0 0 25px;
-      font-size: 1.08rem;
-      font-style: italic;
-    }
-
-    .market-line {
-      margin: 0 0 27px;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 1rem;
-    }
-
-    .research-summary {
-      max-width: 790px;
-      font-size: 1.05rem;
-      line-height: 1.72;
-    }
-
-    .research-summary p {
-      margin: 0 0 17px;
-    }
-
     .education-lines {
-      margin-top: 26px;
+      margin-top: 25px;
       color: var(--muted);
-      font-size: 0.95rem;
-      line-height: 1.65;
+      font-size: .93rem;
+      line-height: 1.6;
     }
 
     .education-lines p {
       margin: 2px 0;
     }
 
-    .home-buttons {
+    .home-actions {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      margin-top: 30px;
+      margin-top: 28px;
     }
 
-    .home-buttons .button {
-      min-width: 150px;
-      text-align: center;
+    .home-actions .button {
+      border-radius: 999px;
+      padding: 9px 16px;
+      min-width: 0;
     }
 
-    .home-footer {
-      max-width: 1180px;
-      margin: 0 auto;
-      padding: 24px;
-      border-top: 1px solid var(--line);
-      color: var(--muted);
+    .email-line {
+      margin-top: 17px;
       font-family: Arial, Helvetica, sans-serif;
-      font-size: 0.85rem;
+      font-size: .93rem;
+      color: var(--muted);
     }
 
-    @media (max-width: 980px) {
-      .home-grid {
-        grid-template-columns: minmax(220px, 285px) minmax(0, 1fr);
-        gap: 44px;
+    @media (max-width: 780px) {
+      .home-shell {
+        padding-top: 44px;
       }
 
-      .intro-column h1 {
-        white-space: normal;
-      }
-    }
-
-    @media (max-width: 760px) {
-      .home-wrap {
-        padding-top: 40px;
-      }
-
-      .home-grid {
+      .profile-row {
         grid-template-columns: 1fr;
-        gap: 34px;
+        gap: 28px;
       }
 
-      .profile-column {
-        max-width: 260px;
+      .profile-photo {
+        max-width: 230px;
       }
 
-      .intro-column {
-        padding-top: 0;
+      .home-name {
+        font-size: clamp(2.5rem, 11vw, 3.4rem);
       }
 
-      .intro-column h1 {
-        font-size: clamp(2.4rem, 11vw, 3.4rem);
-      }
-
-      .position-line {
-        font-size: 1.12rem;
-      }
-
-      .home-buttons .button {
-        min-width: 0;
+      .home-fields {
+        font-size: 1rem;
+        margin-bottom: 28px;
       }
     }
   </style>
@@ -180,81 +154,77 @@
   </nav>
 </header>
 
-<main class="home-wrap">
+<main class="home-shell">
 
-  <section class="home-grid">
+  <div class="intro-kicker">Ph.D. Candidate · Economics · Auburn University</div>
 
-    <aside class="profile-column">
+  <h1 class="home-name">Sirazum Munira Haque</h1>
+
+  <p class="home-fields">
+    Economics of Crime · Labor Economics · Public Economics
+  </p>
+
+  <section class="profile-row">
+
+    <div>
       <img
         class="profile-photo"
         src="assets/headshot.jpg"
         alt="Sirazum Munira Haque"
       >
 
-      <div class="profile-contact">
-        <strong>Email</strong><br>
+      <div class="email-line">
         <a href="mailto:szh0152@auburn.edu">szh0152@auburn.edu</a>
       </div>
-    </aside>
+    </div>
 
-    <section class="intro-column">
-
-      <h1>Sirazum Munira Haque</h1>
-
-      <p class="position-line">
-        Ph.D. Candidate in Economics | Auburn University
+    <div class="profile-copy">
+      <p>
+        I am a Ph.D. candidate in Economics at Auburn University. My research
+        focuses on the economics of crime, labor economics, and public economics.
       </p>
 
-      <p class="fields-line">
-        Economics of Crime · Labor Economics · Public Economics
+      <p>
+        My job market paper studies the effects of pre-arrest diversion, examining
+        how access to an alternative to traditional criminal case processing affects
+        subsequent criminal justice outcomes.
       </p>
 
-      <p class="market-line">
-        <strong>I am on the 2026–27 Economics Job Market.</strong>
+      <p>
+        More broadly, my research examines how criminal justice institutions and
+        public policies shape individual behavior and economic outcomes. My current
+        projects study diversion policy, social safety-net policy and crime, and
+        labor-market regulation.
       </p>
-
-      <div class="research-summary">
-        <p>
-          My job market paper studies the effects of pre-arrest diversion,
-          examining how access to an alternative to traditional criminal case
-          processing affects subsequent criminal justice outcomes.
-        </p>
-
-        <p>
-          More broadly, my research examines how criminal justice institutions
-          and public policies shape individual behavior and economic outcomes.
-          My current projects study diversion policy, social safety-net policy
-          and crime, and labor-market regulation.
-        </p>
-      </div>
-
-      <div class="education-lines">
-        <p>M.S. in Applied Economics, Illinois State University</p>
-        <p>M.B.A. and B.B.A. in Finance, University of Dhaka</p>
-      </div>
-
-      <div class="home-buttons">
-        <!-- When your JMP PDF is ready, change research.html below to files/Haque_JMP.pdf -->
-        <a class="button primary" href="research.html">Job Market Paper</a>
-
-        <a class="button"
-           href="files/CV_Sirazum_Haque.pdf"
-           target="_blank"
-           rel="noopener">
-          CV
-        </a>
-
-        <a class="button" href="teaching.html">Teaching</a>
-      </div>
-
-    </section>
+    </div>
 
   </section>
 
+  <section class="market-box">
+    <strong>I am on the 2026–27 Economics Job Market.</strong>
+    <span>
+      Job market paper:
+      <a href="research.html">Impact of Pre-Arrest Diversion Program in Criminal Justice System</a>
+    </span>
+  </section>
+
+  <div class="education-lines">
+    <p>M.S. in Applied Economics, Illinois State University</p>
+    <p>M.B.A. and B.B.A. in Finance, University of Dhaka</p>
+  </div>
+
+  <div class="home-actions">
+    <a class="button primary" href="research.html">Job Market Paper</a>
+    <a class="button" href="files/CV_Sirazum_Haque.pdf" target="_blank" rel="noopener">CV</a>
+    <a class="button" href="teaching.html">Teaching</a>
+  </div>
+
 </main>
 
-<footer class="home-footer">
-  Sirazum Munira Haque · Department of Economics · Auburn University
+<footer>
+  <div class="footer-inner">
+    Sirazum Munira Haque · Department of Economics · Auburn University
+  </div>
 </footer>
 
 </body>
