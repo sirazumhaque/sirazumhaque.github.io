@@ -12,14 +12,19 @@
   <link rel="stylesheet" href="style.css">
 
   <style>
+    /* =========================================
+       HOMEPAGE — Zihang/PaperMod-inspired palette
+       ========================================= */
+
     :root {
-      --bg: #2b271d;
-      --bg-deep: #242119;
-      --text: #f1ede5;
-      --muted: #aaa191;
-      --accent: #8fb8c6;
-      --line: rgba(210, 200, 180, 0.24);
-      --pill-border: rgba(210, 200, 180, 0.48);
+      --bg: #1d1e20;
+      --surface: #2e2e33;
+      --text: #dadadb;
+      --primary: #f0f0f1;
+      --muted: #9b9c9d;
+      --accent: #8fb9d8;
+      --line: #333333;
+      --pill-border: #4a4b4d;
     }
 
     html, body {
@@ -29,14 +34,12 @@
 
     body {
       min-height: 100vh;
-      background:
-        radial-gradient(circle at 78% 18%, rgba(118, 88, 47, 0.06), transparent 34%),
-        linear-gradient(180deg, #2b271d 0%, #28241c 100%) !important;
+      background: #1d1e20 !important;
     }
 
     /* HEADER */
     .site-header {
-      background: rgba(43, 39, 29, 0.98) !important;
+      background: #1d1e20 !important;
       border-bottom: 1px solid var(--line) !important;
     }
 
@@ -51,8 +54,8 @@
       color: var(--text) !important;
     }
 
-    .nav-links a:hover,
-    .brand:hover {
+    .brand:hover,
+    .nav-links a:hover {
       color: var(--accent) !important;
     }
 
@@ -63,7 +66,6 @@
       padding: 72px 28px 54px;
     }
 
-    /* TOP: exactly the left-photo / right-text structure you liked */
     .hero-grid {
       display: grid;
       grid-template-columns: minmax(280px, 340px) minmax(0, 1fr);
@@ -71,17 +73,17 @@
       align-items: start;
     }
 
+    /* LEFT */
     .profile-column {
       width: 100%;
     }
 
-    /* Keep entire professional headshot visible */
     .profile-photo {
       width: 100%;
       height: auto;
       display: block;
       border: 1px solid var(--line);
-      border-radius: 2px;
+      border-radius: 3px;
     }
 
     .profile-contact {
@@ -95,6 +97,7 @@
     .profile-contact strong {
       display: block;
       margin-bottom: 2px;
+      color: var(--muted);
     }
 
     .profile-contact a {
@@ -106,18 +109,19 @@
       text-decoration: underline;
     }
 
+    /* RIGHT */
     .intro-column {
       padding-top: 4px;
     }
 
     .home-name {
       margin: 0 0 14px;
-      font-size: clamp(2.7rem, 3.8vw, 3.35rem);
+      font-size: clamp(2.65rem, 3.7vw, 3.25rem);
       line-height: 1.04;
       font-weight: 500;
       letter-spacing: -.02em;
       white-space: nowrap;
-      color: var(--text);
+      color: var(--primary);
     }
 
     .position-line {
@@ -138,7 +142,7 @@
       margin: 0 0 28px;
       font-family: Arial, Helvetica, sans-serif;
       font-size: .98rem;
-      color: var(--text);
+      color: var(--primary);
     }
 
     .bio-copy {
@@ -152,21 +156,34 @@
       margin: 0 0 18px;
     }
 
-    /* BOTTOM: keep the TJ-style section from the last version */
+    /* Education now sits directly after the bio.
+       No heading, box, or border so it stays secondary. */
+    .education-inline {
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: .91rem;
+      line-height: 1.58;
+    }
+
+    .education-inline p {
+      margin: 3px 0;
+    }
+
+    /* JOB MARKET PAPER BOX */
     .market-box {
-      margin-top: 34px;
+      margin-top: 32px;
       padding: 20px 22px;
-      border: 1px solid rgba(210, 200, 180, 0.45);
+      border: 1px solid var(--pill-border);
       border-left: 3px solid var(--accent);
-      border-radius: 4px;
-      background: rgba(255, 255, 255, 0.025);
+      border-radius: 5px;
+      background: #232427;
     }
 
     .market-box strong {
       display: block;
       margin-bottom: 12px;
       font-size: 1.02rem;
-      color: var(--text);
+      color: var(--primary);
     }
 
     .market-paper-line {
@@ -188,16 +205,17 @@
       display: inline-block;
       margin-left: 8px;
       padding: 5px 10px;
-      border: 1px solid rgba(210, 200, 180, 0.12);
+      border: 1px solid #3e3f42;
       border-radius: 999px;
       font-family: Arial, Helvetica, sans-serif;
       font-size: .72rem;
       letter-spacing: .12em;
       text-transform: uppercase;
-      color: #8f8879;
+      color: #858689;
       vertical-align: middle;
     }
 
+    /* PAPERMod-style rounded links */
     .quick-links {
       display: flex;
       flex-wrap: wrap;
@@ -220,9 +238,9 @@
     }
 
     .quick-link:hover {
-      color: var(--text);
+      color: var(--primary);
       border-color: var(--accent);
-      background: rgba(143, 184, 198, 0.05);
+      background: #25262a;
     }
 
     .quick-link svg {
@@ -232,29 +250,14 @@
       stroke: currentColor;
     }
 
-    .education-lines {
-      margin-top: 27px;
-      color: var(--muted);
-      font-size: .89rem;
-      line-height: 1.55;
-    }
-
-    .education-lines p {
-      margin: 2px 0;
-    }
-
     .home-footer {
       max-width: 1180px;
       margin: 0 auto;
       padding: 22px 28px;
       border-top: 1px solid var(--line);
-      color: #7f786a;
+      color: #77787a;
       font-family: Arial, Helvetica, sans-serif;
       font-size: .8rem;
-    }
-
-    .home-footer a {
-      color: #8f8879;
     }
 
     @media (max-width: 980px) {
@@ -321,7 +324,6 @@
 
 <main class="home-wrap">
 
-  <!-- TOP AREA: match the structure in your screenshot -->
   <section class="hero-grid">
 
     <aside class="profile-column">
@@ -377,11 +379,15 @@
 
       </div>
 
+      <div class="education-inline">
+        <p>M.S. in Financial Economics, Illinois State University</p>
+        <p>M.B.A. and B.B.A. in Finance, University of Dhaka</p>
+      </div>
+
     </section>
 
   </section>
 
-  <!-- BOTTOM AREA: keep the TJ-style redesign from the previous HTML -->
   <section class="market-box">
     <strong>Job Market Paper</strong>
 
@@ -423,11 +429,6 @@
       Teaching
     </a>
 
-  </div>
-
-  <div class="education-lines">
-    <p>M.S. in Financial Economics, Illinois State University</p>
-    <p>M.B.A. and B.B.A. in Finance, University of Dhaka</p>
   </div>
 
 </main>
