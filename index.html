@@ -10,63 +10,73 @@
 
   <style>
     .home-shell {
-      max-width: 980px;
+      max-width: 920px;
       margin: 0 auto;
-      padding: 72px 24px 54px;
+      padding: 66px 24px 54px;
     }
 
     .intro-kicker {
       font-family: Arial, Helvetica, sans-serif;
       text-transform: uppercase;
       letter-spacing: .18em;
-      font-size: .78rem;
+      font-size: .74rem;
       color: #87a9b8;
       margin-bottom: 18px;
     }
 
     .home-name {
-  margin: 0 0 10px;
-  font-size: clamp(2.6rem, 4.2vw, 3.5rem);
-  line-height: 1.05;
-  font-weight: 500;
-  letter-spacing: -.02em;
-}
+      margin: 0 0 10px;
+      font-size: clamp(2.55rem, 3.9vw, 3.35rem);
+      line-height: 1.05;
+      font-weight: 500;
+      letter-spacing: -.02em;
+      white-space: nowrap;
+    }
 
     .home-fields {
-      margin: 0 0 38px;
-      font-size: 1.15rem;
+      margin: 0 0 36px;
+      font-size: 1.06rem;
       color: var(--muted);
     }
 
     .profile-row {
       display: grid;
-      grid-template-columns: 185px minmax(0, 1fr);
-      gap: 38px;
+      grid-template-columns: 180px minmax(0, 1fr);
+      gap: 32px;
       align-items: start;
     }
 
-.profile-photo {
-  width: 100%;
-  aspect-ratio: 3 / 4;
-  object-fit: cover;
-  object-position: center center;
-  border-radius: 3px;
-  border: 1px solid var(--line);
-  display: block;
-}
+    .profile-photo {
+      width: 180px;
+      height: 240px;
+      object-fit: cover;
+      object-position: 50% 50%;
+      display: block;
+      border-radius: 2px;
+      border: 1px solid var(--line);
+    }
 
     .profile-copy {
-      font-size: 1.05rem;
-      line-height: 1.75;
+      font-size: 1.01rem;
+      line-height: 1.72;
     }
 
     .profile-copy p {
-      margin: 0 0 18px;
+      margin: 0 0 17px;
     }
 
+    .email-line {
+      margin-top: 15px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: .9rem;
+      color: var(--muted);
+    }
+
+    .email-line a { color: var(--accent); }
+
     .market-box {
-      margin-top: 30px;
-      padding: 18px 20px;
+      margin-top: 28px;
+      padding: 17px 19px;
       border: 1px solid #50565a;
       border-left: 3px solid #6f94a5;
       border-radius: 4px;
@@ -76,63 +86,72 @@
     .market-box strong {
       display: block;
       margin-bottom: 7px;
+      font-size: .98rem;
     }
 
-    .market-box a {
-      color: var(--accent);
-    }
+    .market-box span { font-size: .95rem; }
+    .market-box a { color: var(--accent); }
 
     .education-lines {
-      margin-top: 25px;
+      margin-top: 24px;
       color: var(--muted);
-      font-size: .93rem;
-      line-height: 1.6;
+      font-size: .9rem;
+      line-height: 1.55;
     }
 
-    .education-lines p {
-      margin: 2px 0;
-    }
+    .education-lines p { margin: 2px 0; }
 
     .home-actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 28px;
+      gap: 11px;
+      margin-top: 26px;
     }
 
     .home-actions .button {
       border-radius: 999px;
-      padding: 9px 16px;
+      padding: 8px 15px;
       min-width: 0;
     }
 
-    .email-line {
-      margin-top: 17px;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: .93rem;
+    .home-footer {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 22px 24px;
+      border-top: 1px solid var(--line);
       color: var(--muted);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: .82rem;
     }
 
-    @media (max-width: 780px) {
-      .home-shell {
-        padding-top: 44px;
+    @media (max-width: 900px) {
+      .home-shell { max-width: 820px; }
+
+      .home-name {
+        white-space: normal;
+        font-size: clamp(2.4rem, 5.5vw, 3.15rem);
       }
+    }
+
+    @media (max-width: 700px) {
+      .home-shell { padding-top: 42px; }
 
       .profile-row {
         grid-template-columns: 1fr;
-        gap: 28px;
+        gap: 26px;
       }
 
       .profile-photo {
-        max-width: 230px;
+        width: 170px;
+        height: 227px;
       }
 
       .home-name {
-        font-size: clamp(2.5rem, 11vw, 3.4rem);
+        font-size: clamp(2.25rem, 10vw, 2.9rem);
       }
 
       .home-fields {
-        font-size: 1rem;
+        font-size: .98rem;
         margin-bottom: 28px;
       }
     }
@@ -156,7 +175,9 @@
 
 <main class="home-shell">
 
-  <div class="intro-kicker">Ph.D. Candidate · Economics · Auburn University</div>
+  <div class="intro-kicker">
+    Ph.D. Candidate · Economics · Auburn University
+  </div>
 
   <h1 class="home-name">Sirazum Munira Haque</h1>
 
@@ -179,23 +200,25 @@
     </div>
 
     <div class="profile-copy">
+
       <p>
-        I am a Ph.D. candidate in Economics at Auburn University. My research
-        focuses on the economics of crime, labor economics, and public economics.
+        I am a Ph.D. candidate in Economics at Auburn University. My research focuses on
+        the economics of crime, labor economics, and public economics.
       </p>
 
       <p>
-        My job market paper studies the effects of pre-arrest diversion, examining
-        how access to an alternative to traditional criminal case processing affects
+        My job market paper studies the effects of pre-arrest diversion, examining how
+        access to an alternative to traditional criminal case processing affects
         subsequent criminal justice outcomes.
       </p>
 
       <p>
-        More broadly, my research examines how criminal justice institutions and
-        public policies shape individual behavior and economic outcomes. My current
-        projects study diversion policy, social safety-net policy and crime, and
-        labor-market regulation.
+        More broadly, my research examines how criminal justice institutions and public
+        policies shape individual behavior and economic outcomes. My current projects
+        study diversion policy, social safety-net policy and crime, and labor-market
+        regulation.
       </p>
+
     </div>
 
   </section>
@@ -204,7 +227,9 @@
     <strong>I am on the 2026–27 Economics Job Market.</strong>
     <span>
       Job market paper:
-      <a href="research.html">Impact of Pre-Arrest Diversion Program in Criminal Justice System</a>
+      <a href="research.html">
+        Impact of Pre-Arrest Diversion Program in Criminal Justice System
+      </a>
     </span>
   </section>
 
@@ -215,16 +240,21 @@
 
   <div class="home-actions">
     <a class="button primary" href="research.html">Job Market Paper</a>
-    <a class="button" href="files/CV_Sirazum_Haque.pdf" target="_blank" rel="noopener">CV</a>
+
+    <a class="button"
+       href="files/CV_Sirazum_Haque.pdf"
+       target="_blank"
+       rel="noopener">
+      CV
+    </a>
+
     <a class="button" href="teaching.html">Teaching</a>
   </div>
 
 </main>
 
-<footer>
-  <div class="footer-inner">
-    Sirazum Munira Haque · Department of Economics · Auburn University
-  </div>
+<footer class="home-footer">
+  Sirazum Munira Haque · Department of Economics · Auburn University
 </footer>
 
 </body>
