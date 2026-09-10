@@ -3,67 +3,627 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Teaching experience of Sirazum Munira Haque.">
+
+  <meta name="description"
+        content="Teaching experience and materials for Sirazum Munira Haque, Ph.D. Candidate in Applied Economics at Auburn University.">
+
   <title>Teaching | Sirazum Munira Haque</title>
+
   <link rel="stylesheet" href="style.css">
+
+  <style>
+    :root {
+      --bg: #1d1e20;
+      --surface: #232427;
+      --primary: #f0f0f1;
+      --text: #dadadb;
+      --muted: #9b9c9d;
+      --accent: #8fb9d8;
+      --line: #333333;
+      --soft-line: #3d3e42;
+    }
+
+    html, body {
+      background: var(--bg) !important;
+      color: var(--text);
+    }
+
+    body {
+      min-height: 100vh;
+      background: var(--bg) !important;
+    }
+
+    .site-header {
+      background: var(--bg) !important;
+      border-bottom: 1px solid var(--line) !important;
+    }
+
+    .nav {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 18px 28px;
+    }
+
+    .brand,
+    .nav-links a {
+      color: var(--text) !important;
+    }
+
+    .brand:hover,
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--accent) !important;
+    }
+
+    .teaching-wrap {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 58px 28px 72px;
+    }
+
+    .page-kicker {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 10px;
+      color: var(--accent);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    .page-kicker::before {
+      content: "";
+      width: 34px;
+      height: 1px;
+      background: var(--accent);
+      opacity: .7;
+    }
+
+    h1 {
+      margin: 0;
+      color: var(--primary);
+      font-size: clamp(3rem, 6vw, 4.15rem);
+      line-height: 1.04;
+      font-weight: 500;
+      letter-spacing: -.025em;
+    }
+
+    .title-rule {
+      margin: 30px 0 40px;
+      border: 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .teaching-intro {
+      max-width: 900px;
+      margin-bottom: 50px;
+      font-size: 1.06rem;
+      line-height: 1.75;
+      color: var(--text);
+    }
+
+    .section-title {
+      margin: 54px 0 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--line);
+      color: var(--primary);
+      font-size: 1.65rem;
+      font-weight: 500;
+    }
+
+    .institution {
+      margin: 32px 0 8px;
+      color: var(--primary);
+      font-size: 1.35rem;
+      font-weight: 500;
+    }
+
+    .role-label {
+      margin: 12px 0 4px;
+      color: var(--muted);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: .74rem;
+      font-weight: 700;
+      letter-spacing: .17em;
+      text-transform: uppercase;
+    }
+
+    .course {
+      padding: 30px 0 28px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .course-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      align-items: baseline;
+    }
+
+    .course h3 {
+      margin: 0;
+      color: var(--primary);
+      font-size: 1.34rem;
+      font-weight: 500;
+      line-height: 1.35;
+    }
+
+    .course-count {
+      flex: 0 0 auto;
+      color: var(--accent);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: .9rem;
+    }
+
+    .course-meta {
+      margin: 9px 0 14px;
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: .94rem;
+    }
+
+    .course-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 4px;
+    }
+
+    .course-links a,
+    .course-links span {
+      color: var(--accent);
+      font-size: .93rem;
+      text-decoration: none;
+    }
+
+    .course-links a:hover {
+      text-decoration: underline;
+    }
+
+    .syllabus-placeholder {
+      opacity: .55;
+      cursor: default;
+    }
+
+    details.comments {
+      margin-top: 16px;
+    }
+
+    details.comments summary {
+      list-style: none;
+      cursor: pointer;
+      color: var(--muted);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: .77rem;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      user-select: none;
+    }
+
+    details.comments summary::-webkit-details-marker {
+      display: none;
+    }
+
+    details.comments summary::before {
+      content: "+";
+      display: inline-block;
+      width: 18px;
+      color: var(--accent);
+      font-size: 1rem;
+      font-weight: 400;
+    }
+
+    details.comments[open] summary::before {
+      content: "−";
+    }
+
+    .comments-body {
+      margin-top: 18px;
+    }
+
+    blockquote.student-comment {
+      margin: 0 0 16px;
+      padding: 2px 0 2px 20px;
+      border-left: 2px solid #47494d;
+      color: #d6d6d8;
+      font-size: .98rem;
+      font-style: italic;
+      line-height: 1.68;
+    }
+
+
+    .ta-summary {
+      margin-top: 20px;
+      padding-left: 18px;
+      border-left: 3px solid rgba(143, 185, 216, .55);
+    }
+
+    .ta-summary h4 {
+      margin: 0 0 16px;
+      color: var(--primary);
+      font-size: 1.22rem;
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    .ta-summary h4 span {
+      color: var(--muted);
+      font-weight: 400;
+    }
+
+    .ta-summary ul {
+      margin: 0;
+      padding-left: 24px;
+    }
+
+    .ta-summary li {
+      margin: 10px 0;
+      color: var(--text);
+      line-height: 1.55;
+    }
+
+    .ta-summary li::marker {
+      color: var(--accent);
+    }
+
+    .experience-list {
+      margin: 18px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .experience-list li {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 26px;
+      padding: 13px 0;
+      border-bottom: 1px solid rgba(51, 51, 51, .8);
+      line-height: 1.55;
+    }
+
+    .experience-list li:last-child {
+      border-bottom: 0;
+    }
+
+    .experience-term {
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .evaluation-box {
+      margin-top: 22px;
+      padding: 22px 24px;
+      border: 1px solid var(--soft-line);
+      border-left: 3px solid var(--accent);
+      border-radius: 4px;
+      background: var(--surface);
+    }
+
+    .evaluation-box p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .prepared-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 9px 28px;
+      margin-top: 20px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .prepared-grid li {
+      padding: 7px 0;
+      color: var(--text);
+    }
+
+    .prepared-grid li::before {
+      content: "•";
+      margin-right: 10px;
+      color: var(--accent);
+    }
+
+    .development-item {
+      margin-top: 22px;
+      padding: 20px 22px;
+      border: 1px solid var(--soft-line);
+      border-radius: 4px;
+      background: rgba(35, 36, 39, .62);
+    }
+
+    .development-item strong {
+      color: var(--primary);
+    }
+
+    .development-item p {
+      margin: 7px 0 0;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .home-footer {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 22px 28px;
+      border-top: 1px solid var(--line);
+      color: #77787a;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: .8rem;
+    }
+
+    @media (max-width: 720px) {
+      .teaching-wrap {
+        padding-top: 42px;
+      }
+
+      .course-top {
+        display: block;
+      }
+
+      .course-count {
+        display: block;
+        margin-top: 7px;
+      }
+
+      .experience-list li {
+        grid-template-columns: 1fr;
+        gap: 2px;
+      }
+
+      .experience-term {
+        white-space: normal;
+      }
+
+      .prepared-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
+
 <body>
+
 <header class="site-header">
   <nav class="nav">
     <a class="brand" href="index.html">Sirazum Munira Haque</a>
+
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="research.html">Research</a>
-      <a href="teaching.html">Teaching</a>
-      <a href="files/CV_Sirazum_Haque.pdf" target="_blank">CV</a>
+      <a class="active" href="teaching.html">Teaching</a>
+      <a href="files/CV_Sirazum_Haque.pdf"
+         target="_blank"
+         rel="noopener">CV</a>
     </div>
   </nav>
 </header>
 
-<main>
-  <div class="page-title">
-    <div class="eyebrow">Teaching</div>
-    <h1>Teaching</h1>
+<main class="teaching-wrap">
+
+  <div class="page-kicker">Teaching</div>
+  <h1>Teaching</h1>
+  <hr class="title-rule">
+
+  <p class="teaching-intro">
+    I have extensive experience teaching undergraduate economics as both an
+    instructor of record and a teaching assistant. At Auburn University, I have
+    independently taught Principles of Microeconomics, Principles of
+    Macroeconomics, and Money and Banking across in-person and asynchronous
+    online formats. My teaching emphasizes clear economic intuition, applied
+    examples, structured practice, and an accessible learning environment in
+    which students with different levels of preparation can engage confidently
+    with economics.
+  </p>
+
+  <h2 class="section-title">Teaching Experience</h2>
+
+  <h3 class="institution">Auburn University</h3>
+  <div class="role-label">Instructor of Record</div>
+
+  <section class="course">
+    <div class="course-top">
+      <h3>Principles of Microeconomics — ECON 2020</h3>
+      <span class="course-count">4 sections</span>
+    </div>
+
+    <p class="course-meta">
+      Fall 2022 · Spring 2023 · Fall 2024 · Spring 2025<br>
+      In person
+    </p>
+
+    <div class="course-links">
+      <span class="syllabus-placeholder">Sample Syllabus</span>
+    </div>
+
+    <details class="comments">
+      <summary>Selected Student Comments</summary>
+
+      <div class="comments-body">
+        <blockquote class="student-comment">
+          “Very nice teacher and cares that you learn the material and will go
+          out of her way to help.”
+        </blockquote>
+
+        <blockquote class="student-comment">
+          “The instructor’s grading rubric is pretty fair, since it provides
+          students around a week or two to complete homework assignments and
+          allows students to drop their lowest test grades. Plus, extra credit
+          quizzes help too. Also, she solves practice problems and is very open
+          to answering questions which is great. She posts solution videos,
+          practice problems, and other resources students can use…”
+        </blockquote>
+
+        <blockquote class="student-comment">
+          “The coursework is good, and the quizzes help with the tests.
+          Everything was done well, and Mrs Haque is available outside of
+          class, and she was willing to help.”
+        </blockquote>
+      </div>
+    </details>
+  </section>
+
+  <section class="course">
+    <div class="course-top">
+      <h3>Principles of Macroeconomics — ECON 2030</h3>
+      <span class="course-count">4 sections</span>
+    </div>
+
+    <p class="course-meta">
+      Fall 2023 (2 sections) · Spring 2024 · Fall 2025<br>
+      In person and asynchronous online
+    </p>
+
+    <div class="course-links">
+      <span class="syllabus-placeholder">Sample Syllabus</span>
+    </div>
+
+    <details class="comments">
+      <summary>Selected Student Comments</summary>
+
+      <div class="comments-body">
+        <blockquote class="student-comment">
+          “She was extremely kind and truly wanted us to succeed. Although
+          there was a lot of material to cover she was always available for any
+          extra help I needed and answered her emails rapidly.”
+        </blockquote>
+
+        <blockquote class="student-comment">
+          “I thought Ms. Haque did a great job providing us with the materials
+          we needed to excel in this course. The course material was presented
+          in a straightforward manner and we had numerous study resources for
+          each unit we went through.”
+        </blockquote>
+
+        <blockquote class="student-comment">
+          “This was a GREAT economics class. Having the assignments throughout
+          the semester helps your grade and helps prepare for the exams. The
+          lectures were always great and super informative. I always felt
+          prepared for the tests by going to class and studying the study guides
+          you gave us. Thank you so much for making this an enjoyable class!”
+        </blockquote>
+      </div>
+    </details>
+  </section>
+
+  <section class="course">
+    <div class="course-top">
+      <h3>Money and Banking — ECON 3200</h3>
+      <span class="course-count">3 sections</span>
+    </div>
+
+    <p class="course-meta">
+      Summer 2024 · Summer 2025 · Spring 2026<br>
+      Two asynchronous online sections and one in-person section
+    </p>
+
+    <div class="course-links">
+      <span class="syllabus-placeholder">Sample Syllabus — In Person</span>
+      <span class="syllabus-placeholder">Sample Syllabus — Online</span>
+    </div>
+
+    <details class="comments">
+      <summary>Selected Student Comments</summary>
+
+      <div class="comments-body">
+        <blockquote class="student-comment">
+          “She was really receptive to any problems we had in class and made
+          adjustments to expose us to tough questions before the exam.”
+        </blockquote>
+
+        <blockquote class="student-comment">
+          “Professor Haque was great! She was very understanding of all my
+          shortcomings and encouraged everyone. She shifted her usual teaching
+          method from projects to in-class quizzes and I believe the approach
+          paid off greatly. I learned a lot in her class and would recommend her
+          to anyone.”
+        </blockquote>
+
+        <blockquote class="student-comment">
+          “I think she does a very good job of teaching and the in-class
+          activities are a huge help.”
+        </blockquote>
+      </div>
+    </details>
+  </section>
+
+  <div class="role-label" style="margin-top:38px;">Teaching Assistant</div>
+
+  <div class="ta-summary">
+    <h4>ECON 2020 &amp; ECON 2030 <span>(Fall 2020 – Spring 2022)</span></h4>
+    <ul>
+      <li><strong>ECON 2020</strong> (Principles of Microeconomics)</li>
+      <li><strong>ECON 2030</strong> (Principles of Macroeconomics)</li>
+    </ul>
   </div>
 
-  <section>
-    <h2>Auburn University</h2>
+  <h3 class="institution">Illinois State University</h3>
+  <div class="role-label">Graduate Assistant</div>
 
-    <h3>Instructor</h3>
-    <ul class="course-list">
-      <li><strong>Principles of Microeconomics</strong> — Fall 2022, Spring 2023, Fall 2024, Spring 2025</li>
-      <li><strong>Principles of Macroeconomics</strong> — Fall 2023, Spring 2024, Fall 2025</li>
-      <li><strong>Money and Banking</strong> — Summer 2024, Summer 2025, Spring 2026</li>
-    </ul>
+  <ul class="experience-list">
+    <li>
+      <span>Intermediate Macroeconomics</span>
+      <span class="experience-term">Fall 2018</span>
+    </li>
+    <li>
+      <span>Money and Banking</span>
+      <span class="experience-term">Spring 2019</span>
+    </li>
+    <li>
+      <span>Financial Economics</span>
+      <span class="experience-term">Fall 2019</span>
+    </li>
+    <li>
+      <span>Advanced Macroeconomics</span>
+      <span class="experience-term">Spring 2020</span>
+    </li>
+  </ul>
 
-    <h3 style="margin-top:32px;">Teaching Assistant</h3>
-    <p>Principles of Microeconomics / Macroeconomics — Fall 2020 to Spring 2022</p>
-  </section>
+  <h2 class="section-title">Course Evaluations</h2>
 
-  <section class="section">
-    <h2>Illinois State University</h2>
-    <h3>Graduate Assistant</h3>
-    <ul class="course-list">
-      <li>Intermediate Macroeconomics — Fall 2018</li>
-      <li>Money and Banking — Spring 2019</li>
-      <li>Financial Economics — Fall 2019</li>
-      <li>Advanced Macroeconomics — Spring 2020</li>
-    </ul>
-  </section>
-
-  <section class="section">
-    <h2>Teaching Materials</h2>
+  <div class="evaluation-box">
     <p>
-      Syllabi, teaching evaluations, and selected course materials can be added here later.
-      You do not need them in order to launch the website.
+      This section is intentionally left as a clean shell for now. We can add
+      the final aggregate evaluation summary after deciding exactly how you want
+      to present the semester-level evaluations and small summer response counts.
     </p>
-  </section>
+  </div>
+
+  <h2 class="section-title">Courses Prepared to Teach</h2>
+
+  <ul class="prepared-grid">
+    <li>Principles of Microeconomics</li>
+    <li>Principles of Macroeconomics</li>
+    <li>Money and Banking</li>
+    <li>Labor Economics</li>
+    <li>Economics of Crime</li>
+    <li>Public Economics</li>
+  </ul>
+
+  <h2 class="section-title">Teaching Development</h2>
+
+  <div class="development-item">
+    <strong>
+      Course (Re)Design Program — Biggio Center for the Enhancement of Teaching
+      and Learning, Auburn University
+    </strong>
+
+    <p>
+      Participated in the Biggio Center’s Course (Re)Design program focused on
+      evidence-based course design and student learning.
+    </p>
+  </div>
+
 </main>
 
-<footer>
-  <div class="footer-inner">
-    Sirazum Munira Haque · Auburn University
-  </div>
+<footer class="home-footer">
+  Sirazum Munira Haque · Department of Economics · Auburn University
 </footer>
+
 </body>
 </html>
