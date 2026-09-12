@@ -119,6 +119,55 @@
       font-style: italic;
     }
 
+    .paper-meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px 14px;
+      margin-top: 9px;
+    }
+
+    .paper-meta-row .paper-meta {
+      margin: 0;
+    }
+
+    .status-pill {
+      display: inline-block;
+      padding: 6px 12px;
+      border: 1px solid var(--soft-line);
+      border-radius: 999px;
+      color: var(--muted);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: .76rem;
+      font-weight: 700;
+      letter-spacing: .11em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .draft-note {
+      color: var(--muted);
+      font-size: .94rem;
+      font-style: italic;
+    }
+
+    .paper-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .paper-links a {
+      color: var(--accent);
+      font-size: .93rem;
+      text-decoration: none;
+    }
+
+    .paper-links a:hover {
+      text-decoration: underline;
+    }
+
     .paper-abstract {
       max-width: 900px;
       margin: 17px 0 0;
@@ -246,39 +295,50 @@
 
     <article class="paper">
       <h2 class="paper-title">Impact of Pre-Arrest Diversion Program in Criminal Justice System</h2>
-      <p class="paper-meta">Job Market Paper</p>
 
-      <p class="paper-abstract">
-        Nearly 80 percent of arrests in the United States involve low-level misdemeanor offenses,
-        yet even an arrest without conviction can alter the trajectory of a person’s life through the
-        stigma of a criminal record and the resulting reduction in economic opportunity. Because
-        misdemeanor system contact can create barriers to employment, housing, education, and
-        other forms of mobility, policymakers have increasingly considered alternatives that reduce
-        unnecessary entry into the criminal justice system. Adult pre-arrest diversion programs are
-        one such intervention designed to divert low-risk individuals before they formally enter the
-        system. Despite their growing use, there is little causal evidence on the effectiveness of adult
-        pre-arrest diversion programs. This paper helps fill that gap by estimating the causal effect
-        of adult pre-arrest diversion for misdemeanor offenses on subsequent criminal justice contact
-        using individual-level administrative data from Florida’s 8th Judicial Circuit. In this setting,
-        eligible non-traffic, non-domestic-violence misdemeanor cases in which law enforcement does
-        not make an arrest may be referred to the State Attorney’s Office for diversion screening. I
-        exploit the quasi-random assignment of defendants to police officers with different propensities
-        to refer eligible cases to diversion. Using officer referral leniency as an instrument for diversion
-        receipt, I estimate the causal effect of diversion on future arrests and convictions among low-level
-        offenders. The results show that diversion reduces the probability of a future arrest by 22.3
-        percentage points and the probability of a future conviction by 18.8 percentage points within
-        two years, relative to otherwise similar defendants who were not referred. These effects represent
-        declines of 54 percent and 57 percent relative to the no-referral mean and extend to both felony
-        and misdemeanor recidivism. Results are also consistent with a supplementary local timing-based
-        analysis around program rollout. The findings suggest that, by providing an alternative to arrest
-        and prosecution, adult pre-arrest diversion can substantially reduce future contact with the
-        criminal justice system. By reducing later contact with the criminal justice system, these programs
-        may help limit the long-term collateral consequences associated with misdemeanor system
-        involvement. More broadly, the paper contributes new causal evidence to policy discussions about
-        how to reduce the footprint of the criminal justice system while preserving public safety.
-      </p>
+      <div class="paper-meta-row">
+        <span class="paper-meta">Solo authored</span>
+        <span class="status-pill">Draft coming soon</span>
+      </div>
 
-      <!-- Add paper / slides links here when ready. -->
+      <details class="abstract">
+        <summary>Abstract</summary>
+        <div class="abstract-body">
+          Nearly 80 percent of arrests in the United States involve low-level misdemeanor offenses,
+          yet even an arrest without conviction can alter the trajectory of a person’s life through the
+          stigma of a criminal record and the resulting reduction in economic opportunity. Because
+          misdemeanor system contact can create barriers to employment, housing, education, and
+          other forms of mobility, policymakers have increasingly considered alternatives that reduce
+          unnecessary entry into the criminal justice system. Adult pre-arrest diversion programs are
+          one such intervention designed to divert low-risk individuals before they formally enter the
+          system. Despite their growing use, there is little causal evidence on the effectiveness of adult
+          pre-arrest diversion programs. This paper helps fill that gap by estimating the causal effect
+          of adult pre-arrest diversion for misdemeanor offenses on subsequent criminal justice contact
+          using individual-level administrative data from Florida’s 8th Judicial Circuit. In this setting,
+          eligible non-traffic, non-domestic-violence misdemeanor cases in which law enforcement does
+          not make an arrest may be referred to the State Attorney’s Office for diversion screening. I
+          exploit the quasi-random assignment of defendants to police officers with different propensities
+          to refer eligible cases to diversion. Using officer referral leniency as an instrument for diversion
+          receipt, I estimate the causal effect of diversion on future arrests and convictions among low-level
+          offenders. The results show that diversion reduces the probability of a future arrest by 22.3
+          percentage points and the probability of a future conviction by 18.8 percentage points within
+          two years, relative to otherwise similar defendants who were not referred. These effects represent
+          declines of 54 percent and 57 percent relative to the no-referral mean and extend to both felony
+          and misdemeanor recidivism. Results are also consistent with a supplementary local timing-based
+          analysis around program rollout. The findings suggest that, by providing an alternative to arrest
+          and prosecution, adult pre-arrest diversion can substantially reduce future contact with the
+          criminal justice system. By reducing later contact with the criminal justice system, these programs
+          may help limit the long-term collateral consequences associated with misdemeanor system
+          involvement. More broadly, the paper contributes new causal evidence to policy discussions about
+          how to reduce the footprint of the criminal justice system while preserving public safety.
+        </div>
+      </details>
+
+      <div class="paper-links">
+        <!-- When the JMP draft is ready, upload the PDF to /files and uncomment this link.
+        <a href="files/Haque_PreArrest_Diversion.pdf" target="_blank" rel="noopener">Paper</a>
+        -->
+      </div>
     </article>
   </section>
 
@@ -287,7 +347,11 @@
 
     <article class="paper">
       <h2 class="paper-title">Regulating Screening Technology: Distributional Effects of Pre-Employment Polygraph Test Bans</h2>
-      <p class="paper-meta">with Yiyu Xing</p>
+
+      <div class="paper-meta-row">
+        <span class="paper-meta">with Yiyu Xing</span>
+        <span class="draft-note">(Draft available upon request)</span>
+      </div>
 
       <details class="abstract">
         <summary>Abstract</summary>
@@ -308,7 +372,11 @@
         </div>
       </details>
 
-      <!-- Add paper link here when ready. -->
+      <div class="paper-links">
+        <!-- If you later make the draft public, upload the PDF to /files and uncomment this link.
+        <a href="files/Haque_Xing_Polygraph.pdf" target="_blank" rel="noopener">Paper</a>
+        -->
+      </div>
     </article>
   </section>
 
