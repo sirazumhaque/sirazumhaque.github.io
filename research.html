@@ -3,89 +3,334 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Research by Sirazum Munira Haque.">
+  <meta name="description" content="Research by Sirazum Munira Haque, Ph.D. Candidate in Applied Economics at Auburn University.">
   <title>Research | Sirazum Munira Haque</title>
+
   <link rel="stylesheet" href="style.css">
+
+  <style>
+    :root {
+      --bg: #1d1e20;
+      --surface: #232427;
+      --primary: #f0f0f1;
+      --text: #dadadb;
+      --muted: #9b9c9d;
+      --accent: #8fb9d8;
+      --line: #333333;
+      --soft-line: #3d3e42;
+    }
+
+    html, body {
+      background: var(--bg) !important;
+      color: var(--text);
+    }
+
+    body {
+      min-height: 100vh;
+      background: var(--bg) !important;
+    }
+
+    .site-header {
+      background: var(--bg) !important;
+      border-bottom: 1px solid var(--line) !important;
+    }
+
+    .nav {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 18px 28px;
+    }
+
+    .brand,
+    .nav-links a {
+      color: var(--text) !important;
+    }
+
+    .brand:hover,
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--accent) !important;
+    }
+
+    .research-wrap {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 58px 28px 72px;
+    }
+
+    h1 {
+      margin: 0;
+      color: var(--primary);
+      font-size: clamp(3rem, 6vw, 4.15rem);
+      line-height: 1.04;
+      font-weight: 500;
+      letter-spacing: -.025em;
+    }
+
+    .title-rule {
+      margin: 30px 0 40px;
+      border: 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .research-intro {
+      max-width: 900px;
+      margin-bottom: 52px;
+      font-size: 1.06rem;
+      line-height: 1.75;
+      color: var(--text);
+    }
+
+    .research-section {
+      margin-top: 48px;
+    }
+
+    .research-label {
+      margin: 0 0 18px;
+      color: var(--accent);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 1rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .paper {
+      padding: 24px 0 30px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .paper:first-of-type {
+      padding-top: 6px;
+    }
+
+    .paper-title {
+      margin: 0;
+      color: var(--primary);
+      font-size: 1.42rem;
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    .paper-meta {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: .97rem;
+      font-style: italic;
+    }
+
+    .paper-abstract {
+      max-width: 900px;
+      margin: 17px 0 0;
+      color: var(--text);
+      font-size: 1rem;
+      line-height: 1.72;
+    }
+
+    details.abstract {
+      margin-top: 16px;
+    }
+
+    details.abstract summary {
+      list-style: none;
+      cursor: pointer;
+      color: var(--muted);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: .77rem;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      user-select: none;
+    }
+
+    details.abstract summary::-webkit-details-marker {
+      display: none;
+    }
+
+    details.abstract summary::before {
+      content: "+";
+      display: inline-block;
+      width: 18px;
+      color: var(--accent);
+      font-size: 1rem;
+      font-weight: 400;
+    }
+
+    details.abstract[open] summary::before {
+      content: "−";
+    }
+
+    .abstract-body {
+      max-width: 900px;
+      margin-top: 16px;
+      color: var(--text);
+      font-size: 1rem;
+      line-height: 1.72;
+    }
+
+    .work-item {
+      padding: 20px 0 22px;
+      border-bottom: 1px solid rgba(51, 51, 51, .8);
+    }
+
+    .work-item:last-child {
+      border-bottom: 0;
+    }
+
+    .work-title {
+      margin: 0;
+      color: var(--primary);
+      font-size: 1.25rem;
+      font-weight: 500;
+      line-height: 1.45;
+    }
+
+    .work-meta {
+      margin: 7px 0 0;
+      color: var(--muted);
+      font-size: .95rem;
+      font-style: italic;
+    }
+
+    .home-footer {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 22px 28px;
+      border-top: 1px solid var(--line);
+      color: #77787a;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: .8rem;
+    }
+
+    @media (max-width: 720px) {
+      .research-wrap {
+        padding-top: 42px;
+      }
+
+      .paper-title,
+      .work-title {
+        font-size: 1.18rem;
+      }
+    }
+  </style>
 </head>
+
 <body>
+
 <header class="site-header">
   <nav class="nav">
     <a class="brand" href="index.html">Sirazum Munira Haque</a>
+
     <div class="nav-links">
       <a href="index.html">Home</a>
-      <a href="research.html">Research</a>
+      <a class="active" href="research.html">Research</a>
       <a href="teaching.html">Teaching</a>
-      <a href="files/CV_Sirazum_Haque.pdf" target="_blank">CV</a>
+      <a href="files/CV_Sirazum_Haque.pdf" target="_blank" rel="noopener">CV</a>
     </div>
   </nav>
 </header>
 
-<main>
-  <div class="page-title">
-    <div class="eyebrow">Research</div>
-    <h1>Research</h1>
-  </div>
+<main class="research-wrap">
 
-  <section class="section" style="border-top:0; padding-top:0;">
-    <h2>Job Market Paper</h2>
+  <h1>Research</h1>
+  <hr class="title-rule">
+
+  <p class="research-intro">
+    My research focuses on labor economics, the economics of crime, and public economics.
+    I use administrative data and quasi-experimental methods to study how criminal justice
+    institutions and public policies affect individual behavior and economic outcomes.
+  </p>
+
+  <section class="research-section">
+    <div class="research-label">Job Market Paper</div>
 
     <article class="paper">
-      <div class="paper-title">Impact of Pre-Arrest Diversion Program in Criminal Justice System</div>
-      <div class="paper-meta">Job Market Paper</div>
-      <p>
-        This paper studies a pre-arrest diversion program that offers eligible individuals
-        an alternative to traditional criminal case processing. The project examines how
-        access to diversion affects criminal justice outcomes and subsequent contact with
-        the criminal justice system.
+      <h2 class="paper-title">Impact of Pre-Arrest Diversion Program in Criminal Justice System</h2>
+      <p class="paper-meta">Job Market Paper</p>
+
+      <p class="paper-abstract">
+        Nearly 80 percent of arrests in the United States involve low-level misdemeanor offenses,
+        yet even an arrest without conviction can alter the trajectory of a person’s life through the
+        stigma of a criminal record and the resulting reduction in economic opportunity. Because
+        misdemeanor system contact can create barriers to employment, housing, education, and
+        other forms of mobility, policymakers have increasingly considered alternatives that reduce
+        unnecessary entry into the criminal justice system. Adult pre-arrest diversion programs are
+        one such intervention designed to divert low-risk individuals before they formally enter the
+        system. Despite their growing use, there is little causal evidence on the effectiveness of adult
+        pre-arrest diversion programs. This paper helps fill that gap by estimating the causal effect
+        of adult pre-arrest diversion for misdemeanor offenses on subsequent criminal justice contact
+        using individual-level administrative data from Florida’s 8th Judicial Circuit. In this setting,
+        eligible non-traffic, non-domestic-violence misdemeanor cases in which law enforcement does
+        not make an arrest may be referred to the State Attorney’s Office for diversion screening. I
+        exploit the quasi-random assignment of defendants to police officers with different propensities
+        to refer eligible cases to diversion. Using officer referral leniency as an instrument for diversion
+        receipt, I estimate the causal effect of diversion on future arrests and convictions among low-level
+        offenders. The results show that diversion reduces the probability of a future arrest by 22.3
+        percentage points and the probability of a future conviction by 18.8 percentage points within
+        two years, relative to otherwise similar defendants who were not referred. These effects represent
+        declines of 54 percent and 57 percent relative to the no-referral mean and extend to both felony
+        and misdemeanor recidivism. Results are also consistent with a supplementary local timing-based
+        analysis around program rollout. The findings suggest that, by providing an alternative to arrest
+        and prosecution, adult pre-arrest diversion can substantially reduce future contact with the
+        criminal justice system. By reducing later contact with the criminal justice system, these programs
+        may help limit the long-term collateral consequences associated with misdemeanor system
+        involvement. More broadly, the paper contributes new causal evidence to policy discussions about
+        how to reduce the footprint of the criminal justice system while preserving public safety.
       </p>
-      <div class="paper-links">
-        <!-- Add the PDF when ready:
-        <a href="files/JMP_Haque.pdf" target="_blank">Paper</a>
-        -->
-      </div>
+
+      <!-- Add paper / slides links here when ready. -->
     </article>
   </section>
 
-  <section class="section">
-    <h2>Working Papers</h2>
+  <section class="research-section">
+    <div class="research-label">Working Papers</div>
 
     <article class="paper">
-      <div class="paper-title">The Commitment of Firms to Employee Satisfaction: Effects of Relational Contracting on Capital Structure</div>
+      <h2 class="paper-title">Regulating Screening Technology: Distributional Effects of Pre-Employment Polygraph Test Bans</h2>
+      <p class="paper-meta">with Yiyu Xing</p>
+
+      <details class="abstract">
+        <summary>Abstract</summary>
+        <div class="abstract-body">
+          This paper studies the labor-market consequences of restricting employers’ use of
+          pre-employment polygraph tests. The project is motivated by a broader research
+          question: when policymakers delete a screening signal from the hiring process for
+          protecting worker rights, do they reduce discrimination and improve allocation, or
+          do they instead push employers toward noisier substitutes that can worsen outcomes
+          for some groups? States adopted different restrictions before the federal Employee
+          Polygraph Protection Act of 1988, and the federal statute itself created clear occupational
+          exemptions. The analysis combines linked monthly CPS data from 1976–1988 with CPS ASEC
+          data from 1977–1988. The linked monthly CPS allows me to study worker-level transitions
+          into employment and into involuntary job loss, including recent-hire separations as a measure
+          of post-hire match quality. The CPS ASEC extends the analysis to employment status, job
+          search, income, poverty, and insurance coverage. Preliminary results suggest that polygraph
+          bans did not mechanically improve worker outcomes.
+        </div>
+      </details>
+
+      <!-- Add paper link here when ready. -->
+    </article>
+  </section>
+
+  <section class="research-section">
+    <div class="research-label">Work in Progress</div>
+
+    <article class="work-item">
+      <h2 class="work-title">Diversion Fee Reforms, Court Processing, and Later Criminal Justice Outcomes</h2>
+      <p class="work-meta">with Chris Vickers</p>
     </article>
 
-    <article class="paper">
-      <div class="paper-title">Do Islamic Banks Perform Better than Conventional Banks? — The Case of Bangladesh</div>
+    <article class="work-item">
+      <h2 class="work-title">The Effects of SNAP Work Requirements on Criminal Activity</h2>
+      <p class="work-meta">with Joel Cuffey</p>
     </article>
   </section>
 
-  <section class="section">
-    <h2>Work in Progress</h2>
-
-    <article class="paper">
-      <div class="paper-title">Diversion Fee Reforms, Court Processing, and Later Criminal Justice Outcomes</div>
-      <div class="paper-meta">with Chris Vickers</div>
-    </article>
-
-    <article class="paper">
-      <div class="paper-title">The Effects of SNAP Work Requirements on Criminal Activity</div>
-      <div class="paper-meta">with Joel Cuffey</div>
-    </article>
-
-    <article class="paper">
-      <div class="paper-title">Regulating Screening Technology: Labor Market Effects of Pre-Employment Polygraph Test Ban</div>
-      <div class="paper-meta">with Yiyu Xing</div>
-    </article>
-
-    <article class="paper">
-      <div class="paper-title">Did Sports Bettors Use the Stock Market as a Substitute of Sports Betting Market During the COVID-19 Pandemic?</div>
-    </article>
-  </section>
 </main>
 
-<footer>
-  <div class="footer-inner">
-    Sirazum Munira Haque · Auburn University
-  </div>
+<footer class="home-footer">
+  Sirazum Munira Haque · Department of Economics · Auburn University
 </footer>
+
 </body>
 </html>
